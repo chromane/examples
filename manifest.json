@@ -1,0 +1,41 @@
+{
+  "name": "Example",
+  "description": "Example",
+  "action": {
+    "default_icon": "/logo.png"
+  },
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "matches": ["https://*/*", "http://*/*"],
+      "run_at": "document_start",
+      "world": "isolated",
+      "js": ["/content_world_isolated.js"]
+    },
+    {
+      "all_frames": false,
+      "matches": ["https://*/*", "http://*/*"],
+      "run_at": "document_start",
+      "world": "main",
+      "js": ["/content_world_main.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "/js/extension_background.js"
+  },
+  "icons": {
+    "128": "/img/logo.png",
+    "512": "/img/logo.png"
+  },
+  "manifest_version": 3,
+  "permissions": ["activeTab", "scripting", "contextMenus", "windows"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "version": "0.0.1.23",
+  "web_accessible_resources": [
+    {
+      "resources": ["*"],
+      "matches": ["https://*/*", "http://*/*"],
+      "extension_ids": []
+    }
+  ]
+}
