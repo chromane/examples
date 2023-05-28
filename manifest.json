@@ -1,6 +1,6 @@
 {
-  "name": "Example",
-  "description": "Example",
+  "name": "example-capture-clicks",
+  "description": "example-capture-clicks",
   "action": {
     "default_icon": "/logo.png"
   },
@@ -9,23 +9,23 @@
       "all_frames": false,
       "matches": ["https://*/*", "http://*/*"],
       "run_at": "document_start",
-      "world": "isolated",
+      "world": "ISOLATED",
       "js": ["/content_world_isolated.js"]
     },
     {
       "all_frames": false,
       "matches": ["https://*/*", "http://*/*"],
       "run_at": "document_start",
-      "world": "main",
+      "world": "MAIN",
       "js": ["/content_world_main.js"]
     }
   ],
   "background": {
-    "service_worker": "/js/extension_background.js"
+    "service_worker": "/background.js"
   },
   "icons": {
-    "128": "/img/logo.png",
-    "512": "/img/logo.png"
+    "128": "./logo.png",
+    "512": "./logo.png"
   },
   "manifest_version": 3,
   "permissions": ["activeTab", "scripting", "contextMenus", "windows"],
