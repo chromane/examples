@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "version": "0.0.1",
+  "name": "example-override-ajax",
+  "description": "example-override-ajax",
+  "icons": {
+    "128": "./logo-128.png"
+  },
+  "content_scripts": [
+    {
+      "all_frames": false,
+      "matches": ["https://*/*", "http://*/*"],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "js": ["/content_world_main.js"]
+    }
+  ],
+  "permissions": [],
+  "host_permissions": ["https://*/*", "http://*/*"]
+}
